@@ -1,0 +1,80 @@
+/* Navbar Styling */
+.navbar {
+    background-color: #2563eb;
+    color: white;
+    padding: 1rem 1.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-link,
+  .nav-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover,
+  .nav-button:hover {
+    color: #dbeafe;
+  }
+  
+  /* Mobile Menu */
+  .hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .hamburger-menu {
+      display: block;
+    }
+    .mobile-menu {
+      display: flex;
+    }
+  }
+  

@@ -1,0 +1,380 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ==== Navbar ==== */
+.navbar-brand {
+    color: crimson;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ==== Main Container ==== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ==== Hero Section / Carousel ==== */
+.carousel-section {
+    width: 100%;
+    max-height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ==== Upper Section ==== */
+/* .upperdiv {
+    background-color: rgb(244, 54, 76);
+    width: 90%;
+    margin: 20px auto;
+    padding: 40px 20px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.upperdiv {
+    background: url('./assest/kalkata.jpg') no-repeat center center/cover;
+    width: 90%;
+    margin: 20px auto;
+    padding: 40px 20px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.upperdiv h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* ==== Search Bar ==== */
+.onerow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="search"] {
+    flex: 1;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* ==== Offers Section ==== */
+/* .offerdiv {
+    background-color: rgb(231, 240, 240);
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.offerdiv h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: rgb(242, 155, 172);
+}
+
+.offers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 120px;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+} */
+
+/* Offers Section */
+.offerdiv {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    padding: 40px 20px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.offerdiv h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Swiper Carousel */
+.offers-carousel {
+    padding: 10px;
+}
+
+/* Offer Card */
+.offer-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.offer-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.offer-card h3 {
+    margin: 15px 0;
+    font-size: 20px;
+    color: #ff5733;
+}
+
+.offer-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.check-offer-btn {
+    display: inline-block;
+    background: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.check-offer-btn:hover {
+    background: #e64a19;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .offer-card {
+        padding: 15px;
+    }
+
+    .offer-card h3 {
+        font-size: 18px;
+    }
+}
+
+
+/* ==== Travel Section ==== */
+.goverment {
+    background-color: rgb(250, 240, 241);
+    width: 90%;
+    padding: 30px 20px;
+    margin: 40px auto;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.middlepart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.middlesection {
+    background-color: rgb(182, 238, 238);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.middlesection:hover {
+    transform: translateY(-5px);
+}
+
+.middlesection img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.middlesection h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.middlesection button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.middlesection button:hover {
+    background-color: #218838;
+}
+
+/* ==== Rail Section ==== */
+.upperbirth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.upperbirth h1 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rail img {
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== App Setup Section ==== */
+.appsetup {
+    background-color: rgb(244, 54, 76);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+.quickaccess {
+    display: inline-block;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.barcode {
+    width: 150px;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Footer ==== */
+.footer-div {
+    background-color: rgb(244, 244, 230);
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    color: black;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 768px) {
+    .carousel-section {
+        max-height: 250px;
+    }
+    
+    .carousel img {
+        max-height: 250px;
+    }
+
+    .upperdiv {
+        padding: 30px 15px;
+    }
+
+    .middlepart {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .middlesection {
+        width: 90%;
+    }
+
+    .upperbirth {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .rail img {
+        max-width: 100%;
+    }
+}
