@@ -10,9 +10,6 @@ import { FaSearch } from "react-icons/fa"; // Search Icon
 import "./Home.css";
 
 // Importing images
-import offer1 from './assest/offer tag 1.jpeg';
-import offer2 from './assest/offer tag 2.jpeg';
-import offer3 from './assest/offer tag 3.jpeg';
 import pune from './assest/pune.webp';
 import hyd from './assest/hydrabad.jpeg';
 import nag from './assest/nsgpur.jpg';
@@ -21,7 +18,7 @@ import barcode from './assest/barcode.jpg';
 
 const Home = () => {
     const [locations, setLocations] = useState([]);
-    const [selectedLocation, setSelectedLocation] = useState("");
+    // const [selectedLocation, setSelectedLocation] = useState("");
 
     // Fetch Locations from Backend
     useEffect(() => {

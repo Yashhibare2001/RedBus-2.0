@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Home, Calendar, Headphones, LogOut, Bus } from "lucide-react";
 import "./Navbar.css"; // Ensure this file is in the same directory
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate(); // Add navigation hook
 
   const handleLogout = () => {
     console.log("User logged out");
     // Add logout logic (e.g., clearing session storage)
+    localStorage.removeItem("authToken"); // Clear authentication token (if used)
+    navigate("/Logout"); // Redirect to Sign-in page
   };
 
   return (

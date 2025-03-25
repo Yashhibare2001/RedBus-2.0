@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar {
-    background-color: #2563eb;
+    background-color: #13122d;
     color: white;
     padding: 1rem 1.5rem;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -23,6 +23,7 @@
     width: 24px;
     height: 24px;
     margin-right: 8px;
+    color: tomato;
   }
   
   /* Navigation Links */
@@ -47,7 +48,7 @@
   
   .nav-link:hover,
   .nav-button:hover {
-    color: #dbeafe;
+    color: #71082b;
   }
   
   /* Mobile Menu */
