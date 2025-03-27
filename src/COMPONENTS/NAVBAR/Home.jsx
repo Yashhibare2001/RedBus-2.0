@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,8 +17,6 @@ import barcode from './assest/barcode.jpg';
 
 const Home = () => {
     const [locations, setLocations] = useState([]);
-    // const [selectedLocation, setSelectedLocation] = useState("");
-
     // Fetch Locations from Backend
     useEffect(() => {
         axios.get("http://localhost:5000/api/locations") // Update with your backend API
