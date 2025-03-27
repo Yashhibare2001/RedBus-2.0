@@ -9,7 +9,8 @@ const TravelsDetails = () => {
     const [travel, setTravel] = useState(null);
 
     useEffect(() => {
-        axios.get(`https://server-1zkg.onrender.com/travels/${id}`)
+        // axios.get(`https://server-1zkg.onrender.com/travels/${id}`)
+        axios.get(`http://SERVER_URL/travels/${id}`)
             .then(response => setTravel(response.data.travels))
             .catch(error => console.error("Error fetching travel details:", error));
     }, [id]);

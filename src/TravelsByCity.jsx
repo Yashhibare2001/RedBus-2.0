@@ -8,7 +8,8 @@ const TravelsByCity = () => {
     const [travels, setTravels] = useState([]);
 
     useEffect(() => {
-        axios.get("https://server-1zkg.onrender.com/travels")
+        // axios.get("https://server-1zkg.onrender.com/travels")
+        axios.get("http://SERVER_URL/travels")
             .then(response => {
                 const uniqueCities = [...new Set(response.data.map((r) => r.city))];
                 setCities(uniqueCities);
@@ -20,7 +21,8 @@ const TravelsByCity = () => {
         const city = event.target.value;
         setSelectedCity(city);
 
-        axios.get(`https://server-1zkg.onrender.com/getTravelsByCity/${city}`)
+        // axios.get(`https://server-1zkg.onrender.com/getTravelsByCity/${city}`)
+        axios.get(`http://SERVER_URL/getTravelsByCity/${city}`)
             .then(response => setTravels(response.data))
             .catch(error => console.error("Error fetching travels:", error));
     };

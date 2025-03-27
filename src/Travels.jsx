@@ -86,7 +86,8 @@ const Travels = () => {
 
     // Fetch Bus Data
     useEffect(() => {
-        axios.get("https://server-1zkg.onrender.com/travels")
+        // axios.get("https://server-1zkg.onrender.com/travels")
+        axios.get("http://SERVER_URL/travels")
             .then(response => {
                 setTravels(response.data);
                 setFilteredTravels(response.data);
