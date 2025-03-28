@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -16,13 +16,13 @@ import train from './assest/train.webp';
 import barcode from './assest/barcode.jpg';
 
 const Home = () => {
-    const [locations, setLocations] = useState([]);
+    // const [locations, setLocations] = useState([]);
     // Fetch Locations from Backend
-    useEffect(() => {
-        axios.get("http://localhost:5000/api/locations") // Update with your backend API
-            .then(response => setLocations(response.data))
-            .catch(error => console.error("Error fetching locations:", error));
-    }, []);
+    // useEffect(() => {
+    //     axios.get("http://localhost:5000/api/locations") // Update with your backend API
+    //         .then(response => setLocations(response.data))
+    //         .catch(error => console.error("Error fetching locations:", error));
+    // }, []);
 
     return (
         <div>
