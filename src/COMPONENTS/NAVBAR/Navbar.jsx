@@ -19,7 +19,7 @@ const Navbar = () => {
       {/* Logo */}
       <Link to="/" className="navbar-logo">
         <Bus className="navbar-icon" />
-        <span>ApliBus</span>
+        <span>GetBus</span>
       </Link>
 
       {/* Desktop Menu */}
