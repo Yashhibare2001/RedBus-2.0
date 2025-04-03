@@ -1,7 +1,5 @@
 
 
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -11,6 +9,7 @@ const Travels = () => {
     const [travels, setTravels] = useState([]);
     const [filteredTravels, setFilteredTravels] = useState([]);
     const [busType, setBusType] = useState("");
+    const [searchCity, setSearchCity] = useState(""); // State for city search
 
     // Fetch Bus Data
     useEffect(() => {
@@ -23,6 +22,22 @@ const Travels = () => {
             .catch(error => console.error("Error fetching bus data:", error));
     }, []);
 
+     // Handle City Search Input
+     const handleCitySearch = (event) => {
+        const city = event.target.value.toLowerCase();
+        setSearchCity(city);
+        
+        if (city === "") {
+            setFilteredTravels(travels); // Show all if empty
+        } else {
+            const filtered = travels.filter(bus => 
+                bus.city.toLowerCase().includes(city)
+            );
+            setFilteredTravels(filtered);
+        }
+    };
+
+    // Handle bus search input
     const handleFilterChange = (event) => {
         const type = event.target.value;
         setBusType(type);

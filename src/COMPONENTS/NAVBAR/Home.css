@@ -27,6 +27,11 @@ body {
     padding: 20px;
 }
 
+.control{
+    height: 50px;
+    border-radius: 8px;
+}
+
 /* ==== Hero Section / Carousel ==== */
 .carousel-section {
     width: 100%;

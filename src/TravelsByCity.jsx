@@ -1,31 +1,68 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom"; 
 import "./Travels.css";
 
 const TravelsByCity = () => {
     const [cities, setCities] = useState([]);
     const [selectedCity, setSelectedCity] = useState("");
     const [travels, setTravels] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const navigate=useNavigate();
 
     useEffect(() => {
-        axios.get("https://server-1zkg.onrender.com/travels")
-        // axios.get("http://SERVER_URL/travels")
-            .then(response => {
-                const uniqueCities = [...new Set(response.data.map((r) => r.city))];
-                setCities(uniqueCities);
-            })
-            .catch(error => console.error("Error fetching cities:", error));
-    }, []);
+    //     axios.get("https://server-1zkg.onrender.com/travels")
+    //     // axios.get("http://SERVER_URL/travels")
+    //         .then(response => {
+    //             const uniqueCities = [...new Set(response.data.map((r) => r.city))];
+    //             setCities(uniqueCities);
+    //         })
+    //         .catch(error => console.error("Error fetching cities:", error));
+    // }, []);
+
+    axios
+    .get("http://server-1zkg.onrender.com/travels")
+    .then((response) => {
+      if (response.data && Array.isArray(response.data)) {
+        const uniqueCities = [
+          ...new Set(response.data.map((r) => r.city)),
+        ];
+        setCities(uniqueCities);
+      }
+    })
+    .catch((error) => console.error("Error fetching cities:", error));
+}, []);
 
     const handleCityChange = (event) => {
         const city = event.target.value;
         setSelectedCity(city);
 
-        axios.get(`https://server-1zkg.onrender.com/getTravelsByCity/${city}`)
-        // axios.get(`http://SERVER_URL/getTravelsByCity/${city}`)
-            .then(response => setTravels(response.data))
-            .catch(error => console.error("Error fetching travels:", error));
-    };
+        setLoading(true);
+        setError(null);
+    
+
+    //     axios.get(`https://server-1zkg.onrender.com/getTravelsByCity/${city}`)
+    //     // axios.get(`http://SERVER_URL/getTravelsByCity/${city}`)
+    //         .then(response => setTravels(response.data))
+    //         .catch(error => console.error("Error fetching travels:", error));
+    // };
+
+    axios
+    .get(`http://server-1zkg.onrender.com/getTravelsByCity/${city}`)
+    .then((response) => {
+      if (response.data.travelsList && Array.isArray(response.data.travelList)) {
+        setTravels(response.data.travelList);
+        navigate(`/travels/city/${city}`);
+      } else {
+        setTravels([]);
+      }
+    })
+    .catch((error) => {
+      setError("Failed to fetch travels.");
+      setLoading(false);
+    });
+};
 
     return (
         <div className="container">

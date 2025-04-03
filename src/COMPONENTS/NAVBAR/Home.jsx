@@ -1,5 +1,6 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,12 +9,14 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { FaSearch } from "react-icons/fa"; // Search Icon
 import "./Home.css";
 
+
 // Importing images
 import pune from './assest/pune.webp';
 import hyd from './assest/hydrabad.jpeg';
 import nag from './assest/nsgpur.jpg';
 import train from './assest/train.webp';
 import barcode from './assest/barcode.jpg';
+import TravelsByCity from "../../TravelsByCity";
 
 const Home = () => {
     // const [locations, setLocations] = useState([]);
@@ -25,25 +28,53 @@ const Home = () => {
     //         .catch(error => console.error("Error fetching locations:", error));
     // }, []);
 
+    // const HeroSection = ({ handleSearch }) => {
+    //     const [searchCity, setSearchCity] = useState("");
+    //     const [selectedCity, setSelectedCity] = useState("");
+
+    //     const handleCityChange = (city) => {
+    //         setSelectedCity(city);
+    //         setSearchCity(city); // Sync selected city with search input
+
+    //     };
+
+
+    const [searchCity, setSearchCity] = useState("");
+    const [selectedCity, setSelectedCity] = useState("");
+    const [restaurants, setTravels] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const navigate=useNavigate();
+  
+    const handleSearch = async (e) => {
+      e.preventDefault();
+  
+      if (!searchCity && !selectedCity) {
+        setError("Please select or enter a city");
+        return;
+      }
+  
+      setLoading(true);
+      setError(null);
+      const city = searchCity || selectedCity; // Use either the entered city or selected city
+  
+      try {
+        // const response = await axios.get(`http://localhost:5400/getRestaurantsByCity/${city}`);
+        const response = await axios.get(`http://server-1zkg.onrender.com/getRestaurantsByCity/${city}`);
+        console.log("response-->>>>",response);
+        setTravels(response.data); // Assuming the response contains the list of restaurants
+        // Navigate to the results page with the city as a query parameter
+        navigate(`/travels/city/${city}`);
+      } catch (err) {
+        setError("Failed to fetch travels.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+
     return (
         <div>
-            {/* Hero Section with Carousel */}
-            {/* <section className="carousel-section">
-                <Swiper
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="carousel"
-                >
-                    <SwiperSlide><img src={offer1} alt="Offer 1" /></SwiperSlide>
-                    <SwiperSlide><img src={offer2} alt="Offer 2" /></SwiperSlide>
-                    <SwiperSlide><img src={offer3} alt="Offer 3" /></SwiperSlide>
-                </Swiper>
-            </section> */}
-
             {/* Main Content */}
             <div id="div-bg">
                 <div className="upperdiv">
@@ -51,12 +82,19 @@ const Home = () => {
 
                     {/* Search Bar with Icon */}
                     <form className="d-flex onerow" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" id="butn" type="submit">
+                        <input className="form-control me-2" 
+                        type="search" 
+                        placeholder="Search" 
+                        aria-label="Search" 
+                        />
+
+                        <button className="btn btn-outline-success" 
+                        id="butn" type="submit">
                             <FaSearch /> {/* Search Icon */}
                         </button>
                     </form>
 
+                   
                     {/* Offers Section */}
                     <div className="offerdiv">
                         <h2>EXCLUSIVE OFFERS</h2>
@@ -129,7 +167,7 @@ const Home = () => {
                 <div className="goverment">
                     <div className="uppersection">
                         <h1>Try your travels !!</h1>
-                        <form action="./landingpage.html">
+                        <form action="/booking">
                             <button id="Click">VIEW</button>
                         </form>
                     </div>
@@ -139,7 +177,9 @@ const Home = () => {
                             <img src={pune} alt="Pune" className="src1" />
                             <h1>Vintage Thrown</h1>
                             <div>
+                            <form action="/booking"> 
                                 <button>BOOK</button>
+                                </form>
                             </div>
                         </div>
 
@@ -147,7 +187,9 @@ const Home = () => {
                             <img src={hyd} alt="Hyderabad" className="src1" />
                             <h1>Mustang Tours</h1>
                             <div>
+                            <form action="/booking"> 
                                 <button>BOOK</button>
+                                </form>
                             </div>
                         </div>
 
@@ -155,7 +197,9 @@ const Home = () => {
                             <img src={nag} alt="Nagpur" className="src1" />
                             <h1>Rolls on Wheels</h1>
                             <div>
+                            <form action="/booking"> 
                                 <button>BOOK</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -187,5 +231,6 @@ const Home = () => {
         </div>
     );
 };
+
 
 export default Home;
