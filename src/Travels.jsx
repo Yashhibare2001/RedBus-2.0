@@ -88,7 +88,11 @@ const Travels = () => {
                         </div>
                     ))
                 ) : (
-                    <p>Loading bus....</p>
+                    // <p>Loading bus....</p>
+                    <div className="loading-container">
+                        <p>Loading bus.. </p>
+                    <div className="spinner"></div>
+                </div>
                 )}
             </div>
         </div>
