@@ -167,9 +167,11 @@ const Home = () => {
                 <div className="goverment">
                     <div className="uppersection">
                         <h1>Try your travels !!</h1>
-                        <form action="/booking">
+                        <Link to="/booking">
                             <button id="Click">VIEW</button>
-                        </form>
+                        </Link>
+
+                       
                     </div>
 
                     <div className="middlepart">
@@ -177,9 +179,9 @@ const Home = () => {
                             <img src={pune} alt="Pune" className="src1" />
                             <h1>Vintage Thrown</h1>
                             <div>
-                            <form action="/booking"> 
+                            <Link to="/booking"> 
                                 <button>BOOK</button>
-                                </form>
+                                </Link>
                             </div>
                         </div>
 
@@ -187,9 +189,9 @@ const Home = () => {
                             <img src={hyd} alt="Hyderabad" className="src1" />
                             <h1>Mustang Tours</h1>
                             <div>
-                            <form action="/booking"> 
+                            <Link to="/booking"> 
                                 <button>BOOK</button>
-                                </form>
+                                </Link>
                             </div>
                         </div>
 
@@ -197,9 +199,9 @@ const Home = () => {
                             <img src={nag} alt="Nagpur" className="src1" />
                             <h1>Rolls on Wheels</h1>
                             <div>
-                            <form action="/booking"> 
+                            <Link to="/booking"> 
                                 <button>BOOK</button>
-                                </form>
+                                </Link>
                             </div>
                         </div>
                     </div>
