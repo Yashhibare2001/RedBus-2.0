@@ -62,7 +62,7 @@ const Travels = () => {
                 <label>Filter by Bus Type:</label>
                 <select onChange={handleFilterChange} value={busType}>
                     <option value="">Select</option>
-                    <option value="All">All</option>
+                    {/* <option value="All">All</option> */}
                     <option value="AC">AC</option>
                     <option value="Non-AC">Non-AC</option>
                     <option value="Government">Government</option>
@@ -88,7 +88,7 @@ const Travels = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No buses available.</p>
+                    <p>Loading bus....</p>
                 )}
             </div>
         </div>
