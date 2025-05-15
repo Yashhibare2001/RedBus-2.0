@@ -23,6 +23,7 @@ const TravelsByCity = () => {
 
     axios
     .get("http://server-1zkg.onrender.com/travels")
+    // .get("http://localhost:8040/travels")
     .then((response) => {
       if (response.data && Array.isArray(response.data)) {
         const uniqueCities = [

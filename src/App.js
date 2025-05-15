@@ -5,7 +5,7 @@ import TravelsDetails from "./TravelsDetails";
 import Signin from "./COMPONENTS/NAVBAR/Signin";
 import Signup from "./COMPONENTS/NAVBAR/Signup";
 // import Support from "./COMPONENTS/NAVBAR/Support";
-// import TravelsByCity from "./TravelsByCity";
+import TravelsByCity from "./TravelsByCity";
 import Travels from "./Travels";
 
 
@@ -19,11 +19,11 @@ function App() {
         <Route path="/travels/:id" element={<TravelsDetails />} />
         <Route path="/Logout" element={<Signin/>} />
         <Route path="/Signup" element={<Signup/>} />
-        {/* <Route
+        <Route
             path="/getTravelsByCity/:city"
             element={<TravelsByCity/>}
-          /> */}
-        {/* <Route path="/support" element={<Support/>} /> */}
+          /> 
+         {/* <Route path="/support" element={<Support/>} /> */}
       </Routes>
     </Router>
   );

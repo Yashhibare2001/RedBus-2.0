@@ -14,6 +14,7 @@ const Travels = () => {
     // Fetch Bus Data
     useEffect(() => {
         axios.get("https://server-1zkg.onrender.com/travels")
+        // axios.get("http://localhost:8040/travels")
         // axios.get("http://SERVER_URL/travels")
             .then(response => {
                 setTravels(response.data);
@@ -83,6 +84,7 @@ const Travels = () => {
                                 <p>🚌 Type: {bus.type}</p>
                                 {/* <Link to={`/travels/${bus.id}`} className="details-btn">Check</Link> */}
                                 <Link to={`/travels/${bus.id}`} className="details-btn">Check</Link>
+                                
 
                             </div>
                         </div>
